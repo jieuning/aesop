@@ -1,0 +1,500 @@
+@charset "utf-8";
+
+@media(max-width: 1540px){
+    .section{
+        max-width: 1393px;
+    }
+    main #aroma_section .aroma_title{
+        padding-left: 100px;
+    }
+    main #aroma_section .aroma_img{
+        width: 862px; height: 576px;
+    }
+    main #wood_section .wood_inner .wood_img{
+        width: 560px; height: 724px;
+    }
+    main #wood_section .wood_inner .box1{
+        margin-left: 14%;
+    }
+    main #wood_section .wood_inner .box2{
+        right: 14%;
+    }
+    main #wood_section .wood_inner .txt_wrap1{
+        padding: 100px 0 0 100px;
+    }
+    main #wood_section .wood_inner .txt_wrap2{
+        padding-right: 100px;
+    }
+    main #store_section li a{
+        width: 770px; height: 425px;
+    }
+    footer .footer_wrap{
+        max-width: 1393px;
+    }
+} //e: width 1540px 이하
+
+@media(max-width: 1440px){
+    .section{
+        max-width: 1296px;
+    }
+    .img_sub{
+        font-size: 16px;
+    }
+    header #nav .sub_inner{
+        width: 1296px;
+    }
+    header #nav .sub_inner .img{
+        right: -10%;
+    }
+    header #nav .sub_inner ul{
+        padding-right: 110px;
+    }
+    main #main_section img{
+        width: 858px; height: 348px;
+        left: 50%;
+    }
+    main #main_section .main_txt{
+        top: 35%; left: 53%;
+        transform: translate(-50%,-50%);
+    }
+    main #main_section .main_sub.pop{
+        float: left;
+    }
+    main #main_section .btn{
+        top: 0; left: 65%;
+        margin-top: 0;
+    }
+    main #main_section .btn span{
+        position: absolute;
+        padding-left: 15px;
+        font-size: 16px;
+    }
+    main #aroma_section .aroma_title{
+        padding-left: 80px;
+    }
+    main #aroma_section .aroma_img{
+        width: 808px; height: 540px;
+    }
+    main #aroma_section .btn{
+        font-size: 16px;
+    }
+    main #wood_section .wood_inner .wood_img{
+        width: 520px; height: 672px;
+    }
+    main #wood_section .wood_inner .box1{
+        margin-left: 17%;
+    }
+    main #wood_section .wood_inner .box2{
+        right: 17%;
+    }
+    main #wood_section .wood_inner .txt_wrap1{
+        padding: 100px 0 0 80px;
+    }
+    main #wood_section .wood_inner .txt_wrap2{
+        padding-right: 80px;
+    }
+    main #wood_section .wood_inner .btn{
+        font-size: 16px;
+    }
+    main #store_section li a{
+        background-size: 720px !important;
+        width: 720px !important; height: 398px !important;
+    }
+    main #store_section .img_wrap .btn_m{
+        font-size: 16px;
+    }
+    footer .footer_wrap{
+        max-width: 1296px;
+    }
+} //e: width 1440px 이하
+
+@media(max-width: 760px){
+    .title{
+        padding-left: 5%;
+    }
+    header #header_inner .category_m{
+        position: absolute;
+        right: 0; top: 50%;
+        padding: 5px;
+        transform: translate(-50%,-50%);
+        padding-left: 5% !important;
+        padding: 0;
+        cursor: pointer;
+        span{
+            display: block;
+            border: 1px solid #2d2b2b;
+            width: 26px; height: 2px;
+            margin-bottom: 6px;
+        }
+    }
+    header #nav li:last-child .icon, .pc{
+        display: none;
+    }
+    header #header_inner .category_box{
+        width: 300px; height: 100vh;
+        position: fixed;
+        right: 0;
+        padding: 34px;
+        font-size: 16px;
+        z-index: 0;
+        transition: all .4s;
+        background: #ccc;
+        z-index: 50;
+        color: #2d2b2b;
+        display: none;
+        animation: slide 0.5s ease-in-out;
+    }
+    @keyframes slide{
+        0%{
+            transform: translateX(300px);
+        }
+        100%{
+            transform: translateX(0);
+        }
+    }
+    header #header_inner .category_box.open{
+        display: block;
+    }
+    header #header_inner .category_m.close_btn{
+        display: block;
+        span{
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #2d2b2b;
+            position: fixed;
+            top: 3%; right: 300px;
+            margin: 0; padding: 0;
+            cursor: pointer;
+            z-index: 99 !important;
+        } 
+        span:first-child{
+            transform: rotate(135deg);
+        }
+        span:last-child{
+            transform: rotate(-135deg);
+        }
+        span:nth-child(2){
+            display: none;
+        }
+    }
+    header #header_inner .sub_m{
+        padding-top: 25px;
+    }
+    header #header_inner .sub_m .sub_title{
+        font-size: 18px;
+    }
+    header #header_inner .sub_m .sub_title.active{
+        text-decoration: underline;
+        font-weight: bold;
+    }
+    header #header_inner .sub_m .menu{
+        display: none;
+    }
+    header #header_inner .sub_m .menu li{
+        padding: 10px 0;
+    }
+    header #header_inner .sub_m .menu li:first-child{
+        margin-top: 10px;
+    }
+    header #header_inner .sub_m .search_m{
+        margin-top: 20px;
+    }
+    header #header_inner .sub_m .search_m .search_bar{
+        border: none;
+        font-size: 14px;
+        background: transparent;
+        border-bottom: 1px solid #2d2b2b;
+        padding-top: 15px;
+    }
+    header #header_inner .sub_m .search_m .search_bar:focus{
+        outline: none;
+    }
+    header #header_inner .sub_m .search_m .search_btn{
+        position: absolute;
+    }
+    header #header_inner .login{
+        border-bottom: 1px solid #f0f0ea;
+        text-align: center;
+        padding: 10px 0 25px 0; 
+        font-size: 14px;
+    }
+    header #header_inner .login span{
+        display: inline-block;
+        width: 1px; height: 12px;
+        margin: 0 16px;
+        background: #6a6a6a; 
+    }
+    main #main_section img{
+        width: 658px; height: 266px;
+        left: 50%;
+    }
+    main #main_section .main_txt{
+        position: absolute;
+        top: 40%; left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+    }
+    main #main_section .main_title{
+        font-size: 36px;
+        line-height: 125%;
+    }
+    main #main_section .main_sub{
+        font-size: 16px;
+    }
+    main #main_section .main_sub span{
+        font-size: 14px;
+    }
+    main #main_section .main_sub.pop{
+        float: none;
+    }
+    main #main_section .btn{
+        top: 30%; left: 50%;
+        transform: translateX(-50%);
+        font-size: 16px;
+        margin-top: 50px;
+    }
+    main #main_section .btn span{
+        position: static;
+        padding-left: 0;
+        font-size: 16px;
+    }
+    main #aroma_section .aroma_wrap{
+        flex-direction: column;
+        align-items: center;
+    }
+    main #aroma_section .aroma_title{
+        margin-top: 70px;
+        padding-left: 0;
+    }
+    main #aroma_section .aroma_title h1,
+    main #aroma_section .aroma_title p{
+        text-align: center;
+    }
+    main #aroma_section{
+        overflow: hidden;
+    }
+    main #aroma_section .btn{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    main #aroma_section .aroma_img{
+        width: 760px; height: 507px;
+    }
+
+    main #wood_section .wood_inner .wood_img{
+        background-size: 760px;
+        width: 760px; height: 978px;
+    }
+    main #wood_section .wood_wrap{
+        display: block;
+    }
+    main #wood_section .wood_inner{
+        position: static;
+    }
+    main #wood_section .wood_inner .box1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        overflow: hidden;
+        margin-left: 0;
+        margin-right: 0;
+        margin: 230px 0 0 0;
+    }
+    main #wood_section .wood_inner .box2{
+        display: flex;
+        position: static;
+        overflow: hidden;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: -430px;
+    }
+    main #wood_section .wood_inner .img2{
+        z-index: 0;
+    }
+    main #wood_section .wood_inner .txt_wrap1,
+    main #wood_section .wood_inner .txt_wrap2{
+        padding: 70px 0 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    main #wood_section .wood_inner .btn{
+        left: 0;
+        text-align: left;
+        margin-top: 100px;
+    }
+    main #wood_section .wood_inner .top{
+        margin-top: 0;
+    }
+    main #store_section .img_wrap{
+        flex-direction: column;
+    }
+    main #store_section li{
+        width: 100%;
+    }
+    main #store_section li .btn_m{
+        font-size: 16px;
+        color: #2d2b2b;
+        padding: 2px;
+        z-index: 0;
+        text-decoration: underline;
+    }
+    main #store_section li p:last-child{
+        margin-top: 30px;
+    }
+    main #store_section h2{
+        margin-top: 110%;
+    }
+    main #store_section .img_wrap .btn_m{
+        font-size: 16px;
+    }
+    main #store_section li .wrap a{
+        background-size: 760px !important;
+        width: 760px !important; height: 420px !important;
+    }
+    footer .footer_wrap{
+        max-width: 684px;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    footer .footer_inner{
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    footer .bt_menu{
+        justify-content: center;
+        text-align: center;
+    }
+    footer ul:not(:last-child){
+        padding: 0 25px;
+    }
+    footer ul{
+        padding: 0 25px 70px 25px;
+    }
+    footer li a{
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+} //e: width 760px 이하
+
+@media(max-width: 400px){
+    body{
+        overflow-x: hidden;
+    }
+    .title{
+        font-size: 28px;
+        padding-left: 5%;
+    }
+    .sub{
+        font-size: 14px;
+    }
+    .img_txt{
+        font-size: 24px;
+    }
+    .img_sub{
+        padding: 0 22%;
+        font-size: 14px;
+        text-align: center;
+    }
+    header #logo a{
+        background-size: 90px;
+        margin-top: 21px;
+    } 
+    header #header_inner .category_m.close_btn span{
+        top: 60px; right: 270px;
+    }
+    header #header_inner .category_box{
+        width: 270px;
+    }
+    header #header_inner .login span{
+       margin: 0 6px;
+    }
+    header #header_inner .sub_m .sub_title{
+        font-size: 16px;
+    }
+    header #header_inner .sub_m .menu{
+        font-size: 14px;
+    }
+    main #main_section{
+        height: 600px;
+    }
+    main #main_section .main_txt{
+        width: 77%;
+        top: 45%; left: 50%;
+    }
+    main #main_section .main_title{
+        font-size: 26px;
+    }
+    main #main_section .main_sub{
+        font-size: 14px;
+    }
+    main #main_section .main_sub span{
+        font-size: 12px;
+    }
+    main #main_section img{
+        width: 316px; height: 128px;
+    }
+    main #best_swiper .item{
+        background-size: 360px;
+    }
+    main #best_swiper .swiper-slide a{
+        width: 400px; height: 476px;
+    }
+    main #aroma_section .aroma_img{
+        width: 400px; height: 266px;
+    }
+    main #aroma_section .btn{
+        width: 120px; height: 42px;
+        font-size: 14px;
+    }
+    main #aroma_section .btn span{
+        line-height: 42px;
+    }
+    main #perfum_section #perfume_swiper .item{
+        background-size: 360px;
+    }
+    main #perfum_section #perfume_swiper .swiper-slide a{
+        width: 400px; height: 476px;
+    }
+    main #wood_section .wood_inner .wood_img{
+        width: 400px !important; height: 515px !important;
+        background-size: 400px !important;
+    }
+    main #wood_section .wood_inner .box1{
+        overflow: hidden;
+    }
+    main #wood_section .wood_inner .box2{
+        position: static;
+        overflow: hidden;
+        margin-top: -200px;
+    }
+    main #wood_section .wood_inner .right{
+        text-align: center;
+    }
+    main #wood_section .wood_inner .btn{
+        width: 120px; height: 42px;
+        font-size: 14px;
+    }
+    main #wood_section .wood_inner .btn span{
+        line-height: 42px;
+    }
+    main #store_section li .wrap a{
+        background-size: 400px !important;
+        width: 400px !important; height: 221px !important;
+        margin-bottom: 30px;
+    }
+    main #store_section h2{
+        margin-top: 150%;
+    }
+    footer li a{
+        font-size: 14px;
+    }
+    footer .copyright{
+        font-size: 14px;
+    }
+} //e: width 400px 이하
