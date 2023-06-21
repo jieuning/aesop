@@ -21,7 +21,6 @@
     rel="stylesheet">
   <!-- jQuery 연결 -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="js/jquery-ui.js"></script>
   <!-- plugin 연결 -->
   <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
@@ -39,8 +38,8 @@
     <div id="header_inner">
 
       <!-- 데스크탑 네비게이션 메뉴 -->
+      <h2 class="hidden">헤더 메뉴</h2>
       <ul id="nav">
-        <h2 class="hidden">메인 메뉴</h2>
 
         <!-- 로고 -->
         <li>
@@ -89,7 +88,7 @@
 
               <!-- 이미지 -->
               <div class="sub_menu_img">
-                <img src="img/skincare4.jpg" alt="헤어 오일 이미지">
+                <img src="img/skincare.jpg" alt="헤어 오일 이미지">
               </div>
             </div>
           </div>
@@ -179,7 +178,7 @@
 
               <!-- 이미지 -->
               <div class="sub_menu_img">
-                <img src="img/aroma4.jpg" alt="아로마 꽃밭 이미지">
+                <img src="img/aroma.jpg" alt="아로마 꽃밭 이미지">
               </div>
             </div>
           </div>
@@ -202,7 +201,7 @@
 
               <!-- 이미지 -->
               <div class="sub_menu_img">
-                <img src="img/home2.jpg" alt="실내 스탠드 조명 이미지">
+                <img src="img/home.jpg" alt="실내 스탠드 조명 이미지">
               </div>
             </div>
           </div>
@@ -479,7 +478,7 @@
             <a class="sub_title" href="#">스토어</a>
             <div class="search_m menu">
               <form>
-                <label for="스토어 검색바"></label>
+                <label class="hidden">스토어 검색바</label>
                 <input class="search_bar" type="search" placeholder="청담점" onfocus="this.placeholder=''"
                   onblur="this.placeholder='청담점'">
                 <input class="search_btn" type="image" src="img/search_btn2_b.png" alt="스토어 검색 버튼">
