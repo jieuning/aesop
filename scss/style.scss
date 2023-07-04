@@ -7,7 +7,8 @@
 }
 
 body {
-  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
   height: 100%;
   background: #FFFEF2;
   color: #2d2b2b;
@@ -22,7 +23,6 @@ body {
 }
 
 .section {
-  max-width: 1920px;
   height: 100%;
   margin: 0 auto;
 }
@@ -36,15 +36,25 @@ body {
   z-index: 99999;
 }
 
-.section_title {
-  margin: 150px 0 20px 0;
-  font-size: 42px;
-  font-weight: bold;
-  text-decoration-line: underline;
-  font-family: 'Roboto', sans-serif;
+// 영역 타이틀
+.title_wrap {
+  margin-bottom: 50px;
   padding-left: 5%;
+
+  .section_title {
+    margin: 150px 0 20px 0;
+    font-size: 42px;
+    font-weight: bold;
+    text-decoration-line: underline;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  p {
+    font-size: 18px;
+  }
 }
 
+// 아이템 타이틀
 .item_title_wrap {
   margin-top: 20px;
   text-align: center;
@@ -55,12 +65,14 @@ body {
   }
 }
 
+// 이미지 타이틀
 .img_title {
   font-size: 36px;
   padding-bottom: 20px;
   line-height: 1.2;
 }
 
+// 이미지 서브 타이틀
 .img_sub {
   font-size: 18px;
   line-height: 1.5;
@@ -69,11 +81,12 @@ body {
 // 공용 버튼
 .btn {
   position: relative;
-  border: 1px solid #6a6a6a;
+  border: 1px solid #ccc;
   padding: 12px 60px 12px 20px;
   background: none;
   margin-top: 30px;
   transition: all .4s;
+  font-size: 14px;
   font-weight: 500;
   display: inline-block;
   cursor: pointer;
@@ -199,7 +212,7 @@ header {
       overflow: hidden;
       visibility: hidden; // 숨김
       transition: all .4s;
-      background: #ccc;
+      background: #FFFEF2;
     }
 
     // 메뉴 호버시 서브 메뉴 등장
@@ -224,10 +237,25 @@ header {
 
           // 호버시 언더라인
           a {
+            position: relative;
             padding: 4px 0;
 
-            &:hover {
-              text-decoration: underline;
+            &::after{
+              display: block;
+              content: '';
+              width: 100%;
+              height: 1px;
+              background: #2d2b2b;
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              transform: scaleX(0);
+              transform-origin: center left;
+              transition: all .4s;
+            }
+
+            &:hover::after {
+              transform: scaleX(1);
             }
           }
 
@@ -259,7 +287,7 @@ header {
       transition: all .4s;
       max-height: 600px;
       border-top: 1px solid #ccc;
-      background: #ccc;
+      background: #FFFEF2;
     }
 
     // 메뉴 호버시 스토어 검색 등장
@@ -290,7 +318,7 @@ header {
       margin-left: 1%;
       font-size: 26px;
       border: none;
-      background: #ccc;
+      background: #FFFEF2;
     }
 
     .search_btn {
@@ -340,19 +368,17 @@ header {
 // ----- 메인 -----
 
 main {
-  margin: 0 auto;
-  width: 100%;
   height: 600px;
   position: relative;
-  background: #F0F0ED;
   display: flex;
+  border-bottom: 1px solid #ccc;
 
   // 메인 설명
   .main_content {
     width: 50%;
     height: 100%;
-    background: #E1DEBF;
     padding: 0 5%;
+    border-left: 1px solid #ccc;
 
     .content_wrap {
       position: relative;
@@ -410,9 +436,10 @@ main {
     // 슬라이드 제품 호버시 확대
     .item {
       transition: all .4s;
+      overflow: hidden;
 
       &:hover {
-        transform: scale(1.5);
+        transform: scale(1.1);
       }
 
       img {
@@ -562,7 +589,7 @@ main {
       transition: all .4s;
 
       &:hover {
-        transform: scale(1.5);
+        transform: scale(1.1);
       }
 
       img {
@@ -688,79 +715,125 @@ main {
 // ----- 스토어 영역 -----
 
 #store_section {
-  overflow: hidden;
-  padding-bottom: 150px;
+  padding: 0 5%;
 
-  h2 {
-    padding-bottom: 50px;
+  .title_wrap {
+    margin-bottom: 50px;
+    padding-left: 0;
+
+    h2 {
+      padding-left: 0;
+    }
+
+    p {
+      font-size: 18px;
+    }
   }
+  .store_wrap {
+    display: flex;
 
-  .img_wrap {
-    width: 100%;
+    .store_img {
+      position: relative;
+      width: 982px;
+      height: 630px;
 
-    li {
-      width: 100%;
-      height: 100%;
-
-      .store_img_wrap {
-        position: relative;
-        transition: all .4s;
-        display: block;
-        width: 50%;
-        float: left;
-
-        img {
-          width: 100%;
-          object-fit: cover;
-          float: left;
-        }
-
-        // 이미지 호버시 더보기 메세지 등장
-        .hover_box {
-          position: absolute;
-          top: 0;
-          right: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(45, 43, 43, 0.9);
-          z-index: 50;
-          opacity: 0;
-          transition: all .4s;
-
-          &:hover {
-            opacity: 1;
-          }
-
-          .txt_wrap {
-            position: relative;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            padding: 6%;
-          }
-
-          p {
-            font-size: 24px;
-            color: #F0F0ED;
-            text-align: center;
-            word-break: keep-all;
-          }
-
-          p:nth-child(1) {
-            font-size: 18px;
-            padding-bottom: 20px;
-            line-height: 1.5;
-          }
-        }
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all 1s;
+        transition: all 1s;
       }
+    }
+  
+    .store_tab {
+      width: 746px;
+      
+      li {
+        position: relative;
+        width: 100%;
+        height: 210px;
+        border-top: 1px solid #ccc;
+        line-height: 1.5;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 30px;
+        -webkit-transition: all .4s;
+        transition: all .4s;
+        cursor: pointer;
 
-      // 모바일 텍스트 보이지 않게
-      .m_store_txt {
-        display: none;
+        &:last-child {
+          border-bottom: 1px solid #ccc;
+        }
+
+        &.active {
+          color: #FFFEF2;
+          background: #2d2b2b;
+        }
+
+        h4 {
+          font-size: 18px;
+          font-weight: 500;
+        }
+
+        .map_btn {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%);
+          border: 1px solid #ccc;
+          color: #2d2b2b;
+          font-size: 14px;
+          padding: 10px 20px;
+          margin-right: 30px;
+          cursor: pointer;
+        }
+
+        .map_btn:hover {
+          border: 1px solid #2d2b2b;
+          background: #2d2b2b;
+          color: #FFFEF2;
+        }
+
+        .map_btn.active {
+          border: 1px solid #FFFEF2;
+          color: #FFFEF2;
+        }
       }
     }
   }
 
+  .store-btn {
+    margin: 50px 0 150px 0;
+  }
+
+}
+
+.map_bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+
+  .close_btn {
+    position: fixed;
+    top: 25.5%;
+    left: 67%;
+    width: 52px;
+    z-index: 99;
+    cursor: pointer;
+  }
+
+  #map iframe {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+  }
 }
 
 // ----- 푸터 영역 -----
