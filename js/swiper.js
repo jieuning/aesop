@@ -32,7 +32,7 @@ $(document).ready(function () {
   });
 
   /* #perfum_section 슬라이드 */
-  new Swiper("#perfume_swiper", {
+  new Swiper("#home_swiper", {
     loop: true,
     slidesPerView: 'auto',
     speed: 700,
@@ -49,7 +49,7 @@ $(document).ready(function () {
     },
     // 페이지네이션
     pagination: {
-      el: ".perfume_pager",
+      el: ".home_pager",
       type: "progressbar",
     },
     breakpoints: {

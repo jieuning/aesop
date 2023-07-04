@@ -562,8 +562,8 @@ main {
 
 // ----- 퍼퓸 영역 -----
 
-#perfume_section {
-  #perfume_swiper {
+#home_section {
+  #home_swiper {
     height: 100%;
     margin-right: 0;
     margin-left: auto;
@@ -599,7 +599,7 @@ main {
     }
 
     // 페이지네이션
-    .perfume_pager {
+    .home_pager {
       position: absolute;
       height: 2px;
       top: auto;
