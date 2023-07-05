@@ -41,7 +41,7 @@
 
   // ----- 헤더 -----
 
-  // 헤더 메인 메뉴 none(카테고리로 버튼으로 대체)
+  // 헤더 메인 메뉴(카테고리로 버튼으로 대체)
   header #nav .menu_wrap,
   header #nav .user_menu {
     display: none;
@@ -64,24 +64,31 @@
 
   header #header_inner .category_m {
     position: absolute;
-    right: 0;
+    right: -13px;
     top: 50%;
+    width: 28px;
     transform: translate(-50%, -50%);
-    padding-left: 5%;
     cursor: pointer;
+    margin-right: 5%;
 
     // 카테고리 버튼
     span {
+      position: relative;
       display: block;
       background: #FFFEF2;
       width: 28px;
       height: 2px;
+    }
+
+    span:first-child {
       margin-bottom: 5px;
     }
   }
 
   // 카테고리 박스(비활성화)
   header #header_inner .category_box {
+    position: absolute;
+    top: 0;
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -92,6 +99,7 @@
     display: none;
     overflow-y: scroll; // 세로 스크롤바 생성
     scrollbar-width: none; // 파이어폭스 스크롤바 안보이게
+    z-index: 10;
   }
 
   // 스크롤바 안보이게
@@ -105,8 +113,9 @@
   }
 
   // 클릭하면 닫기 버튼 활성화
-  header #header_inner .category_m.close_btn {
+  header #header_inner .category_m.close {
     display: block;
+    z-index: 20;
 
     // 닫기 버튼
     span {
@@ -115,18 +124,20 @@
       height: 2px;
       background: #FFFEF2;
       position: relative;
-      right: 5%;
       cursor: pointer;
-      z-index: 99 !important;
     }
 
-    span:nth-child(2) {
+    span.active {
+      background: #2d2b2b;
+    }
+
+    span:first-child {
       position: absolute;
       top: 0px;
       transform: rotate(135deg);
     }
 
-    span:nth-child(3) {
+    span:last-child {
       position: absolute;
       top: 0px;
       transform: rotate(-135deg);
@@ -135,18 +146,41 @@
 
   // 카테고리 리스트
   header #header_inner .sub_m {
-    padding: 20px 0;
     border-bottom: 1px solid #dedede;
   }
 
+  // 클릭하면 리스트 화살표 회전
+  header #header_inner .sub_m.arrow_action .sub_title::after {
+    transform: rotate(180deg);
+  }
+
   header #header_inner .sub_m .sub_title {
+    position: relative;
     font-size: 18px;
+    display: block;
+    padding: 20px 0;
   }
 
   // 리스트 클릭시 
   header #header_inner .sub_m .sub_title.active {
     text-decoration: underline;
     font-weight: 600;
+  }
+
+  // 리스트 화살표
+  header #header_inner .sub_m .sub_title::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 36%;
+    right: 0;
+    background: url(../img/menu_arrow.png) no-repeat;
+    background-size: contain;
+    width: 16px;
+    height: 16px;
+    transform: rotate(0);
+    -webkit-transition: all .4s;
+    transition: all .4s;
   }
 
   // 리스트 하위 메뉴(제이쿼리로 토글)
@@ -213,7 +247,7 @@
 
   // 하단으로 내리기
   main {
-    flex-direction: column-reverse;
+    flex-direction: column;
     height: 100%;
   }
 
@@ -238,13 +272,13 @@
     font-size: 16px;
   }
 
-  // // ----- 베스트 영역, 퍼퓸 영역 -----
+  // ----- 베스트 영역, 스토어 영역 -----
 
   // overflow로 숨겨진 버튼 다시 제자리로(호버 기능 제거)
   #best_section #best_swiper .swiper-button-next,
   #best_section #best_swiper .swiper-button-prev,
-  #perfume_section #perfume_swiper .swiper-button-next,
-  #perfume_section #perfume_swiper .swiper-button-prev {
+  #home_section #home_swiper .swiper-button-next,
+  #home_section #home_swiper .swiper-button-prev {
     transform: translateX(0);
   }
 
@@ -289,31 +323,58 @@
 
   // ----- 스토어 영역 -----
 
-  #store_section .img_wrap li {
-    margin-top: 50px;
+  // 이미지, 탭 간격 0
+  #store_section {
+    padding: 0;
   }
 
-  // width 채워서 이미지 하단으로 내리기
-  #store_section .img_wrap li .store_img_wrap {
-    position: static;
+  #store_section .title_wrap {
+    padding: 0 5%;
+  }
+
+  // 탭 아래로 내리기
+  #store_section .store_wrap {
+    flex-direction: column;
+    position: relative;
+  }
+
+  // 스토어 이미지 랩
+  #store_section .store_wrap .store_img {
     width: 100%;
-    cursor: default;
-    float: none;
+    height: 692px;
+    overflow: hidden;
   }
 
-  // 이미지 호버 박스 제거
-  #store_section .img_wrap li .store_img_wrap .hover_box {
-    display: none;
+  // 스토어 이미지
+  #store_section .store_wrap .store_img img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0 auto;
   }
 
-  #store_section .img_wrap li .m_store_txt {
-    padding: 50px 5% 0 5%;
-    display: inline-block;
+  // 탭 모바일 화면에 꽉차게
+  #store_section .store_wrap .store_tab {
+    width: 100%;
   }
 
-  #store_section .img_wrap li .m_store_txt span:first-child {
-    padding-top: 50px;
-    line-height: 1.5;
+  // 탭 리스트 height 100%
+  #store_section .store_wrap .store_tab li {
+    height: 100%;
+    padding: 20px 0 20px 30px;
+    flex-direction: column;
+  }
+
+  #store_section .store_wrap .store_tab li .map_btn {
+    width: 98px;
+    position: static;
+    transform: none;
+    margin-top: 10px;
+  }
+
+  #store_section .store-btn {
+    margin: 50px 5% 150px 5%;
   }
 }
 
@@ -321,8 +382,8 @@
 
   // ----- 공용 클래스 -----
 
-  .section_title {
-    font-size: 28px;
+  .title_wrap .section_title {
+    font-size: 32px;
   }
 
   .img_title {
@@ -338,6 +399,15 @@
 
   header #header_inner {
     background: transparent;
+  }
+
+  // 카테고리 유저 편의 메뉴
+  header #header_inner .m_user a {
+    font-size: 14px;
+  }
+
+  header #header_inner .sub_m .sub_title {
+    font-size: 16px;
   }
 
   // ----- 메인 -----
@@ -376,6 +446,32 @@
     padding: 0 5%;
   }
 
+  // ----- 스토어 영역 -----
+
+  #store_section .store_wrap .store_tab li .tab_txt h4 {
+    font-size: 16px;
+  }
+
+  #store_section .store_wrap .store_tab li .tab_txt p {
+    font-size: 14px;
+  }
+
+  // 스토어 이미지 랩
+  #store_section .store_wrap .store_img {
+    height: 488px;
+  }
+
+  .map_bg #map .close_btn {
+    top: 24%;
+  }
+
+  .map_bg #map iframe {
+    width: 100%;
+    height: 350px;
+    padding: 0 5%;
+  }
+
+
   // ----- 푸터 -----
 
   footer ul:not(:last-child) {
@@ -389,4 +485,17 @@
   footer li a {
     font-size: 12px;
   }
+}
+
+@media(max-width: 414px) {
+
+  // 스토어 이미지 랩
+  #store_section .store_wrap .store_img {
+    height: 266px;
+  }
+
+  .map_bg #map iframe {
+    height: 250px;
+  }
+
 }

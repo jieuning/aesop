@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  let mapBtn = $(".store_tab li div"),
+  let mapBtn = $(".store_tab li .map_btn"),
       maps = $(".map_bg > div > iframe"),
       bg = $(".map_bg");
   
