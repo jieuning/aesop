@@ -22,6 +22,7 @@
 
   // 하단으로 내린 요소 왼쪽 정렬
   footer .bt_menu {
+    -webkit-box-pack: start;
     justify-content: flex-start;
     padding-top: 60px;
   }
@@ -50,6 +51,7 @@
   // 로고 가운데 정렬
   header #nav .logo {
     height: 70px;
+    display: -webkit-box;
     display: flex;
     align-items: center;
   }
@@ -247,6 +249,7 @@
 
   // 하단으로 내리기
   main {
+    -webkit-box-orient: vertical;
     flex-direction: column;
     height: 100%;
   }
@@ -285,6 +288,7 @@
   // ----- 아로마 영역 -----
 
   #aroma_section .aroma_wrap {
+    -webkit-box-orient: vertical;
     flex-direction: column;
   }
 
@@ -305,6 +309,7 @@
   // ----- 우드 영역 -----
 
   #wood_section .wood_wrap {
+    -webkit-box-orient: vertical;
     flex-direction: column-reverse;
   }
 
@@ -334,6 +339,7 @@
 
   // 탭 아래로 내리기
   #store_section .store_wrap {
+    -webkit-box-orient: vertical;
     flex-direction: column;
     position: relative;
   }
@@ -363,6 +369,7 @@
   #store_section .store_wrap .store_tab li {
     height: 100%;
     padding: 20px 0 20px 30px;
+    -webkit-box-orient: vertical;
     flex-direction: column;
   }
 
